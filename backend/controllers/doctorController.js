@@ -92,6 +92,17 @@ const appointmentCancel = async (req, res) => {
             }
 
             await doctorModel.findByIdAndUpdate(docId, { slots_booked })
+
+            // Reset notification flag for appointments that moved up in queue
+            // This allows them to receive "You're Next" email when they reach position #2
+            const remainingAppointments = slots_booked[slotDate]?.[slotTime] || []
+            if (remainingAppointments.length >= 2) {
+                // Reset notification for the appointment that is now at position #2
+                const secondInLine = remainingAppointments[1]
+                await appointmentModel.findByIdAndUpdate(secondInLine, { 
+                    notificationSent: false 
+                })
+            }
             
             return res.json({ success: true, message: 'Appointment Cancelled' })
         }
@@ -135,6 +146,17 @@ const appointmentComplete = async (req, res) => {
             }
 
             await doctorModel.findByIdAndUpdate(docId, { slots_booked })
+
+            // Reset notification flag for appointments that moved up in queue
+            // This allows them to receive "You're Next" email when they reach position #2
+            const remainingAppointments = slots_booked[slotDate]?.[slotTime] || []
+            if (remainingAppointments.length >= 2) {
+                // Reset notification for the appointment that is now at position #2
+                const secondInLine = remainingAppointments[1]
+                await appointmentModel.findByIdAndUpdate(secondInLine, { 
+                    notificationSent: false 
+                })
+            }
             
             return res.json({ success: true, message: 'Appointment Completed' })
         }

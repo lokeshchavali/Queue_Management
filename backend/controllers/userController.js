@@ -7,6 +7,7 @@ import appointmentModel from "../models/appointmentModel.js";
 import { v2 as cloudinary } from 'cloudinary'
 import stripe from "stripe";
 import razorpay from 'razorpay';
+import { sendAppointmentConfirmation } from "../services/emailService.js";
 
 // Gateway Initialize
 const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY)
@@ -297,6 +298,34 @@ const bookAppointment = async (req, res) => {
         // Save updated slots in doctor data
         await doctorModel.findByIdAndUpdate(docId, { slots_booked })
 
+        // Send confirmation email
+        const emailData = {
+            userData: {
+                name: userData.name,
+                email: userData.email
+            },
+            docData: {
+                name: docData.name,
+                address: docData.address
+            },
+            slotDate,
+            slotTime,
+            estimatedTime,
+            suggestedArrival,
+            queuePosition
+        }
+
+        // Send email asynchronously (don't wait for it to complete)
+        sendAppointmentConfirmation(emailData).then(result => {
+            if (result.success) {
+                console.log(`✅ Confirmation email sent to ${userData.email}`);
+            } else {
+                console.log(`⚠️ Failed to send confirmation email: ${result.error}`);
+            }
+        }).catch(error => {
+            console.log(`⚠️ Error sending confirmation email: ${error.message}`);
+        });
+
         res.json({ 
             success: true, 
             message: 'Appointment Booked',
@@ -538,6 +567,7 @@ const verifyStripe = async (req, res) => {
     }
 
 }
+
 // API to update patient status (on-my-way, arrived, etc.)
 const updatePatientStatus = async (req, res) => {
     try {

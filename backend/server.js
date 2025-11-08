@@ -19,7 +19,8 @@ startQueueMonitor()
 
 // middlewares
 const allowedOrigins = [
-  "http://localhost:5173", // for local development
+  "http://localhost:5173",
+  "http://localhost:5174", // for local development
   "https://queue-management-admin.vercel.app",
   "https://queue-management-frontend-five.vercel.app"
 ];
