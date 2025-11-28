@@ -67,20 +67,19 @@ Queue_Management/
 │── backend/ # Node.js API server
 │── README.md
 
-
+```
 ### Frontend (User)
 
-
+```
 frontend/src/
 │── App.jsx
 │── assets/
 │── components/
 │── context/
 └── pages/
-
-
+```
 ### Admin Panel
-
+```
 
 admin/src/
 │── App.jsx
@@ -88,10 +87,10 @@ admin/src/
 │── context/
 └── pages/
 
-
+```
 ### Backend
 
-
+```
 backend/
 │── server.js
 │── config/
@@ -124,7 +123,7 @@ npm install
 ```
 
 Create `.env`:
-
+```env
 
 MONGO_URI=your_mongo_uri
 JWT_SECRET=your_secret
@@ -133,14 +132,14 @@ CLOUDINARY_API=xxx
 CLOUDINARY_SECRET=xxx
 EMAIL_USER=xxx
 EMAIL_PASS=xxx
-
+```
 
 Run backend:
 
-
+```bash
 npm start
 
-
+```
 ---
 
 ### 3️⃣ Frontend Setup
@@ -212,4 +211,5 @@ npm run dev
 
 ## 📄 License
 This project is open-source and free to use.
+
 
