@@ -55,14 +55,22 @@ A full-stack **Queue Management System** designed for clinics and hospitals. It 
 ---
 
 ## 📂 Folder Structure
-
+```
+Queue_Management/
+│── frontend/ # User app
+│── admin/ # Admin panel
+│── backend/ # Node.js API server
+│── README.md
 Queue_Management/
 │── frontend/ # User app
 │── admin/ # Admin panel
 │── backend/ # Node.js API server
 │── README.md
 
+
 ### Frontend (User)
+
+
 frontend/src/
 │── App.jsx
 │── assets/
@@ -72,6 +80,8 @@ frontend/src/
 
 
 ### Admin Panel
+
+
 admin/src/
 │── App.jsx
 │── components/
@@ -80,6 +90,8 @@ admin/src/
 
 
 ### Backend
+
+
 backend/
 │── server.js
 │── config/
@@ -89,25 +101,31 @@ backend/
 │── routes/
 └── services/
 
-
+```
 ---
 
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repository
+
+
 git clone https://github.com/lokeshchavali/Queue_Management.git
+
 cd Queue_Management
 
 
 ---
 
 ### 2️⃣ Backend Setup
+
+
 cd backend
 npm install
 
-bash
 
 Create `.env`:
+
+
 MONGO_URI=your_mongo_uri
 JWT_SECRET=your_secret
 CLOUDINARY_CLOUD=xxx
@@ -118,12 +136,16 @@ EMAIL_PASS=xxx
 
 
 Run backend:
+
+
 npm start
 
 
 ---
 
 ### 3️⃣ Frontend Setup
+
+
 cd ../frontend
 npm install
 npm run dev
@@ -132,10 +154,11 @@ npm run dev
 ---
 
 ### 4️⃣ Admin Panel Setup
+
+
 cd ../admin
 npm install
 npm run dev
-
 
 ---
 
@@ -190,5 +213,3 @@ npm run dev
 
 ## 📄 License
 This project is open-source and free to use.
-
-
