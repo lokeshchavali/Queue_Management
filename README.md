@@ -62,8 +62,6 @@ Queue_Management/
 │── backend/ # Node.js API server
 │── README.md
 
-shell
-
 ### Frontend (User)
 frontend/src/
 │── App.jsx
@@ -72,7 +70,6 @@ frontend/src/
 │── context/
 └── pages/
 
-shell
 
 ### Admin Panel
 admin/src/
@@ -81,7 +78,6 @@ admin/src/
 │── context/
 └── pages/
 
-shell
 
 ### Backend
 backend/
@@ -93,7 +89,6 @@ backend/
 │── routes/
 └── services/
 
-yaml
 
 ---
 
@@ -103,7 +98,6 @@ yaml
 git clone https://github.com/lokeshchavali/Queue_Management.git
 cd Queue_Management
 
-yaml
 
 ---
 
@@ -122,12 +116,10 @@ CLOUDINARY_SECRET=xxx
 EMAIL_USER=xxx
 EMAIL_PASS=xxx
 
-yaml
 
 Run backend:
 npm start
 
-yaml
 
 ---
 
@@ -136,7 +128,6 @@ cd ../frontend
 npm install
 npm run dev
 
-yaml
 
 ---
 
@@ -145,7 +136,6 @@ cd ../admin
 npm install
 npm run dev
 
-yaml
 
 ---
 
@@ -200,4 +190,5 @@ yaml
 
 ## 📄 License
 This project is open-source and free to use.
+
 
