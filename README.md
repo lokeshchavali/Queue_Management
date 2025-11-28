@@ -63,7 +63,6 @@ Queue_Management/
 │── README.md
 
 shell
-Copy code
 
 ### Frontend (User)
 frontend/src/
@@ -74,7 +73,6 @@ frontend/src/
 └── pages/
 
 shell
-Copy code
 
 ### Admin Panel
 admin/src/
@@ -84,7 +82,6 @@ admin/src/
 └── pages/
 
 shell
-Copy code
 
 ### Backend
 backend/
@@ -97,7 +94,6 @@ backend/
 └── services/
 
 yaml
-Copy code
 
 ---
 
@@ -108,7 +104,6 @@ git clone https://github.com/lokeshchavali/Queue_Management.git
 cd Queue_Management
 
 yaml
-Copy code
 
 ---
 
@@ -117,7 +112,6 @@ cd backend
 npm install
 
 bash
-Copy code
 
 Create `.env`:
 MONGO_URI=your_mongo_uri
@@ -129,13 +123,11 @@ EMAIL_USER=xxx
 EMAIL_PASS=xxx
 
 yaml
-Copy code
 
 Run backend:
 npm start
 
 yaml
-Copy code
 
 ---
 
@@ -145,7 +137,6 @@ npm install
 npm run dev
 
 yaml
-Copy code
 
 ---
 
@@ -155,7 +146,6 @@ npm install
 npm run dev
 
 yaml
-Copy code
 
 ---
 
@@ -210,3 +200,4 @@ Copy code
 
 ## 📄 License
 This project is open-source and free to use.
+
