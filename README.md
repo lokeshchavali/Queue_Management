@@ -108,20 +108,20 @@ backend/
 
 ### 1️⃣ Clone the repository
 
-
+```bash
 git clone https://github.com/lokeshchavali/Queue_Management.git
 
 cd Queue_Management
-
+```
 
 ---
 
 ### 2️⃣ Backend Setup
-
+```bash
 
 cd backend
 npm install
-
+```
 
 Create `.env`:
 
@@ -144,22 +144,21 @@ npm start
 ---
 
 ### 3️⃣ Frontend Setup
-
+```bash
 
 cd ../frontend
 npm install
 npm run dev
-
-
+```
 ---
 
 ### 4️⃣ Admin Panel Setup
 
-
+```bash
 cd ../admin
 npm install
 npm run dev
-
+```
 ---
 
 ## 🔌 API Overview
@@ -213,3 +212,4 @@ npm run dev
 
 ## 📄 License
 This project is open-source and free to use.
+
